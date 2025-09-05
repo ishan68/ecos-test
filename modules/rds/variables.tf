@@ -1,0 +1,12 @@
+variable "project_name" {}
+variable "region" {}
+variable "vpc_cidr" {}
+variable "private_subnet_ids" {}
+variable "vpc_id" {}
+variable "environment" {}
+variable "db_allocated_storage" {}
+variable "db_instance_class" {}
+variable "db_engine_version" {}
+variable "db_name" {}
+variable "db_username" {}
+variable "db_password" {}

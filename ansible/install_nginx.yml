@@ -1,0 +1,29 @@
+---
+- name: Install Nginx and deploy sample page on Ubuntu EC2
+  hosts: webservers
+  become: true
+
+  tasks:
+    - name: Update apt cache and upgrade packages
+      ansible.builtin.apt:
+        update_cache: yes
+        upgrade: dist
+
+    - name: Install Nginx
+      ansible.builtin.apt:
+        name: nginx
+        state: present
+
+    - name: Ensure Nginx is running and enabled
+      ansible.builtin.service:
+        name: nginx
+        state: started
+        enabled: yes
+
+    - name: Deploy sample index.html
+      ansible.builtin.copy:
+        dest: /var/www/html/index.html
+        content: "<h1>Welcome to my sample Nginx app deployed via Ansible!</h1>"
+        owner: www-data
+        group: www-data
+        mode: '0644'
