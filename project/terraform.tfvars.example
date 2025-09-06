@@ -1,0 +1,35 @@
+region           = "us-east-1"
+project_name     = "ecos"
+environment      = "test"
+
+# Networking
+vpc_cidr             = "10.0.0.0/16"
+public_subnet_cidr   = "10.0.0.0/24"
+private1_subnet_cidr = "10.0.1.0/24"
+private2_subnet_cidr = "10.0.2.0/24"
+
+# EC2 / AMIs
+nat_ami_id     = "ami-xxxxxxxxxxxxxxxxx"
+ansible_ami_id = "ami-xxxxxxxxxxxxxxxxx"
+app_ami_id     = "ami-xxxxxxxxxxxxxxxxx"
+key_name       = "your-keypair-name"
+
+# RDS
+db_name              = "your-db-name"
+db_username          = "your-db-username"
+db_password          = "your-db-password"
+db_engine_version    = "8.0"
+db_instance_class    = "db.t3.micro"
+db_allocated_storage = "20"
+
+# Domain / Route53
+domain_name     = "example.com"
+san_names       = "www.example.com"
+route53_zone_id = "ZXXXXXXXXXXXXXXX"
+
+# Alerts
+alert_email = "your-email@example.com"
+
+# Secrets
+secret_username = "your-secret-username"
+secret_password = "your-secret-password"
